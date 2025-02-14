@@ -8,7 +8,7 @@ public class Calculator {
         Float number1 = sc.nextFloat();
         System.out.print("Enter the second number: ");
         float number2 = sc.nextFloat();
-        float add = number1 + number2;
+        float add = number1 + number2; 
         float subtraction = number1 - number2;
         float multiplication = number1 * number2;
         float division = number1 / number2;

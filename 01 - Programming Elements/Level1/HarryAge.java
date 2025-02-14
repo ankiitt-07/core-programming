@@ -5,7 +5,7 @@ import java.util.*;
         
         int birthYear = 2000;
         int currentYear = 2024;
-        int age = currentYear - birthYear;
+        int age = currentYear - birthYear; // here finding the age
         System.out.println("Harry's age in 2024 is "+ age);
     }
 }

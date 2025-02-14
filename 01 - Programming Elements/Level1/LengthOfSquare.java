@@ -6,7 +6,8 @@ public class LengthOfSquare {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the perimeter of square : ");
         float perimeter = sc.nextFloat();
-        float squareSideLength = perimeter / 4;
+
+        float squareSideLength = perimeter / 4; // square has 4 sides 
         System.out.println("The length of side of square is "+squareSideLength);
         
     }

@@ -8,6 +8,7 @@ public class TotalPriceOfItem {
         int unitPrice = sc.nextInt();
         System.out.print("Enter the quantity : ");
         int quantity = sc.nextInt();
+        //finding total price
         int totalPrice = unitPrice * quantity;
         System.out.println("The total price is INR "+totalPrice+" if the unit price of an item is INR "+unitPrice+" and the quantity is "+quantity);
     }
