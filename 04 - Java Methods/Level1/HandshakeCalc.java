@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class HandshakeCalc {
     public static void main(String[] args) {
-            Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter the number of students: ");
         int n = sc.nextInt();
