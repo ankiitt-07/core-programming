@@ -2,9 +2,9 @@ import java.util.Scanner;
 
 public class FizzBuzzForLoop {
   public static void main(String[] args) {
-      Scanner scanner = new Scanner(System.in);
+      Scanner sc = new Scanner(System.in);
 
-      int num = scanner.nextInt();
+      int num = sc.nextInt();
 
       for (int i = 1; i <= num; i++) {
           if (i % 3 == 0 && i % 5 == 0) {
