@@ -14,9 +14,9 @@ public class CalculateBMI {
 
         for (int i = 0; i < n; i++) {
             System.out.println("\nPerson " + (i + 1) + ":");
-            System.out.print("Enter height (in meters): ");
+            System.out.print("Enter height in meters : ");
             heights[i] = sc.nextDouble();
-            System.out.print("Enter weight (in kg): ");
+            System.out.print("Enter weight in kg : ");
             weights[i] = sc.nextDouble();
 
             bmiValues[i] = weights[i] / (heights[i] * heights[i]);
@@ -33,11 +33,16 @@ public class CalculateBMI {
         }
 
         System.out.println("\nBMI Report:");
-        System.out.printf("%-10s %-10s %-10s %-15s%n", "Height(m)", "Weight(kg)", "BMI", "Status");
-        System.out.println("------------------------------------------");
+        System.out.println("------------------------------------------------------");
+        System.out.println("Height(m)\tWeight(kg)\tBMI\t\tStatus");
+        System.out.println("------------------------------------------------------");
+        
         for (int i = 0; i < n; i++) {
-            System.out.printf("%-10.2f %-10.2f %-10.2f %-15s%n", heights[i], weights[i], bmiValues[i], weightStatus[i]);
+            System.out.println(String.format("%.2f", heights[i]) + "\t\t" +
+                               String.format("%.2f", weights[i]) + "\t\t" +
+                               String.format("%.2f", bmiValues[i]) + "\t\t" +
+                               weightStatus[i]);
         }
-
+        
     }
 }

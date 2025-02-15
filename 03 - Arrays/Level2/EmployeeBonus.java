@@ -28,17 +28,17 @@ public class EmployeeBonus {
                     yearsOfService[i] = years;
                     break;
                 } else {
-                    System.out.println("Invalid input! Salary must be positive, and years of service cannot be negative. Try again.");
+                    System.out.println("Invalid input! ");
                 }
             }
         }
 
         for (int i = 0; i < numEmployees; i++) {
-            double bonusPercentage = (yearsOfService[i] > 5) ? 0.05 : 0.02;
-            bonuses[i] = salaries[i] * bonusPercentage;
-            newSalaries[i] = salaries[i] + bonuses[i];
+            double bonusPercentage = (yearsOfService[i] > 5) ? 0.05 : 0.02; //calculatig bonus percentage
+            bonuses[i] = salaries[i] * bonusPercentage; // adding bonus
+            newSalaries[i] = salaries[i] + bonuses[i]; // new salary
 
-            totalBonus += bonuses[i];
+            totalBonus += bonuses[i]; 
             totalOldSalary += salaries[i];
             totalNewSalary += newSalaries[i];
         }

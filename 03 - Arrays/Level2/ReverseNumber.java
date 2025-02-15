@@ -9,17 +9,19 @@ public class ReverseNumber {
         
         int temp = num, count = 0;
         
+        //Finding the count of digits
         while (temp != 0) {
             count++;
             temp /= 10;
         }
 
-        int[] digits = new int[count];
+        int[] digits = new int[count]; //creating array of size count
 
         temp = num;
+
         for (int i = 0; i < count; i++) {
-            digits[i] = temp % 10;
-            temp /= 10;
+            digits[i] = temp % 10; //extracting last digit
+            temp /= 10; //removing last digit
         }
 
         System.out.print("Reversed Number: ");

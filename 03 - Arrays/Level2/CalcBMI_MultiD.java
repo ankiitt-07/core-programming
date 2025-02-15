@@ -14,12 +14,12 @@ public class CalcBMI_MultiD {
             System.out.println("\nPerson " + (i + 1) + ":");
             
             do {
-                System.out.print("Enter height (in meters, positive value): ");
+                System.out.print("Enter height in meters : ");
                 personData[i][0] = sc.nextDouble();
             } while (personData[i][0] <= 0);
 
             do {
-                System.out.print("Enter weight (in kg, positive value): ");
+                System.out.print("Enter weight in kg : ");
                 personData[i][1] = sc.nextDouble();
             } while (personData[i][1] <= 0);
 
@@ -37,11 +37,16 @@ public class CalcBMI_MultiD {
         }
 
         System.out.println("\nBMI Report:");
-        System.out.printf("%-10s %-10s %-10s %-15s%n", "Height(m)", "Weight(kg)", "BMI", "Status");
-        System.out.println("------------------------------------------");
+        System.out.println("------------------------------------------------------");
+        System.out.println("Height(m)\tWeight(kg)\tBMI\t\tStatus");
+        System.out.println("------------------------------------------------------");
         for (int i = 0; i < number; i++) {
-            System.out.printf("%-10.2f %-10.2f %-10.2f %-15s%n", personData[i][0], personData[i][1], personData[i][2], weightStatus[i]);
+            System.out.println(String.format("%.2f", personData[i][0]) + "\t\t" +
+                               String.format("%.2f", personData[i][1]) + "\t\t" +
+                               String.format("%.2f", personData[i][2]) + "\t\t" +
+                               weightStatus[i]);
         }
+        
     }
     
 }

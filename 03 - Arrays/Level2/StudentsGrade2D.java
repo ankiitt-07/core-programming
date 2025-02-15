@@ -2,52 +2,72 @@ import java.util.Scanner;
 
 public class StudentsGrade2D {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
+        Scanner sc = new Scanner(System.in);
+
+        // Taking input for the number of students
         System.out.print("Enter the number of students: ");
-        int numberOfStudents = scanner.nextInt();
-        
-        int[][] marks = new int[numberOfStudents][3];
-        double[] percentages = new double[numberOfStudents];
-        char[] grades = new char[numberOfStudents];
+        int number = sc.nextInt();
 
-        for (int i = 0; i < numberOfStudents; i++) {
-            System.out.println("Enter marks for Student " + (i + 1) + " (Physics, Chemistry, Maths):");
+        String[] subjects = {"Physics", "Chemistry", "Maths"};
+        double[][] studentData = new double[number][5]; 
+        char[] grades = new char[number];
 
+        for (int i = 0; i < number; i++) {
+            System.out.println("\nStudent " + (i + 1) + ":");
+
+            double totalMarks = 0;
             for (int j = 0; j < 3; j++) {
-                int mark;
-                do {
-                    mark = scanner.nextInt();
-                    if (mark < 0) {
-                        System.out.println("Marks cannot be negative. Enter again:");
+                while (true) {
+                    System.out.print("Enter marks for " + subjects[j] + " (0-100): ");
+                    double mark = sc.nextDouble();
+                    if (mark >= 0 && mark <= 100) {
+                        studentData[i][j] = mark;
+                        totalMarks += mark;
+                        break;
+                    } else {
+                        System.out.println("Invalid input! Please enter a value between 0 and 100.");
                     }
-                } while (mark < 0);
-                marks[i][j] = mark;
+                }
             }
 
-            int totalMarks = marks[i][0] + marks[i][1] + marks[i][2];
-            percentages[i] = (totalMarks / 3.0);
+            // Store total marks and percentage in the 2D array
+            studentData[i][3] = totalMarks;
+            studentData[i][4] = totalMarks / 3.0;
 
-            if (percentages[i] >= 90) {
+            // Assigning grade
+            if (studentData[i][4] >= 80) {
                 grades[i] = 'A';
-            } else if (percentages[i] >= 80) {
+            } else if (studentData[i][4] >= 70) {
                 grades[i] = 'B';
-            } else if (percentages[i] >= 70) {
+            } else if (studentData[i][4] >= 60) {
                 grades[i] = 'C';
-            } else if (percentages[i] >= 60) {
+            } else if (studentData[i][4] >= 50) {
                 grades[i] = 'D';
+            } else if (studentData[i][4] >= 40) {
+                grades[i] = 'E';
             } else {
                 grades[i] = 'F';
             }
         }
 
-        System.out.printf("%-10s %-10s %-10s %-10s %-12s %-8s%n", "Physics", "Chemistry", "Maths", "Total", "Percentage", "Grade");
-        System.out.println("------------------------------------------------------------");
+        System.out.println("\nStudent Report:");
+        System.out.println("--------------------------------------------------------------------------");
+        System.out.println("Physics\tChemistry\tMaths\tTotal\tPercentage\tGrade\tRemarks");
+        System.out.println("--------------------------------------------------------------------------");
 
-        for (int i = 0; i < numberOfStudents; i++) {
-            int total = marks[i][0] + marks[i][1] + marks[i][2];
-            System.out.printf("%-10d %-10d %-10d %-10d %-12.2f %-8c%n", 
-                marks[i][0], marks[i][1], marks[i][2], total, percentages[i], grades[i]);
+        for (int i = 0; i < number; i++) {
+            String remarks;
+            switch (grades[i]) {
+                case 'A': remarks = "Level 4"; break;
+                case 'B': remarks = "Level 3"; break;
+                case 'C': remarks = "Level 2"; break;
+                case 'D': remarks = "Level 1"; break;
+                case 'E': remarks = "Level 1 - LOW"; break;
+                default: remarks = "Remedial"; break;
+            }
+
+            System.out.println((int)studentData[i][0] + "\t" + (int)studentData[i][1] + "\t\t" + (int)studentData[i][2] + "\t" +
+                               (int)studentData[i][3] + "\t" + String.format("%.2f", studentData[i][4]) + "\t\t" + grades[i] + "\t" + remarks);
         }
     }
 }
