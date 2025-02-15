@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class CountDigits {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
+        System.out.print("Enter the number : ");
         int number = sc.nextInt();
 
         int count = 0;
@@ -13,6 +13,6 @@ public class CountDigits {
             count++;
         }
 
-        System.out.println(count);
+        System.out.println("Number of digits: "+count);
     }
 }

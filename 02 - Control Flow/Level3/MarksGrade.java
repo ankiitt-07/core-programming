@@ -3,9 +3,11 @@ import java.util.Scanner;
 public class MarksGrade {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
+        System.out.print("Enter the marks of physics : ");
         double physics = sc.nextDouble();
+        System.out.print("Enter the marks of chemistry : ");
         double chemistry = sc.nextDouble();
+        System.out.print("Enter the marks of maths : ");
         double maths = sc.nextDouble();
 
         double total = physics + chemistry + maths;
