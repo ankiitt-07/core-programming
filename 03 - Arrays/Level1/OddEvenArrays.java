@@ -2,7 +2,7 @@ import java.util.*;
 
 public class OddEvenArrays {
     public static void main(String[] args) {
-          Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         int number = sc.nextInt();
 
         if (number <= 0) {
@@ -22,7 +22,18 @@ public class OddEvenArrays {
             }
         }
 
-        System.out.println("Even numbers: " + Arrays.toString(Arrays.copyOf(evenNumbers, evenIndex)));
-        System.out.println("Odd numbers: " + Arrays.toString(Arrays.copyOf(oddNumbers, oddIndex)));
+        // Printing the odd numbers
+        System.out.print("Odd Numbers: ");
+        for (int i = 0; i < oddIndex; i++) {
+            System.out.print(oddNumbers[i] + " ");
+        }
+        System.out.println();
+
+        // Printing the even numbers
+        System.out.print("Even Numbers: ");
+        for (int i = 0; i < evenIndex; i++) {
+            System.out.print(evenNumbers[i] + " ");
+        }
+        System.out.println();
     }
 }

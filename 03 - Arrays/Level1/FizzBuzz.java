@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class FizzBuzz {
     public static void main(String[] args) {
-          Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         
         System.out.print("Enter a positive integer: ");
         int num = sc.nextInt();
@@ -12,7 +12,7 @@ public class FizzBuzz {
             return;
         }
 
-        String[] results = new String[num + 1];
+        String[] results = new String[num + 1];   // Creating a String array to store results
 
         for (int i = 0; i <= num; i++) {
             if (i % 3 == 0 && i % 5 == 0) {
