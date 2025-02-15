@@ -9,9 +9,9 @@ class SumUntil0{
 
     while (num != 0){
       sum += num;
-      num = sc.nextInt();
+      num = sc.nextInt(); // taking another num to add & if here we entered 0 it will not run
     }
 
-    System.out.println(sum);
+    System.out.println("Total sum until 0 is : "+sum);
   }
 }
