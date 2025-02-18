@@ -6,7 +6,7 @@ public class OddEvenArrays {
         int number = sc.nextInt();
 
         if (number <= 0) {
-            System.out.println("Error: Not a natural number");
+            System.out.println(" Please enter natural number");
             return;
         }
 
