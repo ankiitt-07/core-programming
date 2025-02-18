@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class CalculateBMI {
+public class CalculateeBMI {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the weight in kg : ");
