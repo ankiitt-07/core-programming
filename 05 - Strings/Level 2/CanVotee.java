@@ -1,11 +1,11 @@
 import java.util.*;
 
-class CanVote{
+public class CanVotee{
   public static int[] generateRandomAge(){
     Random r = new Random();
     int[] ages = new int[10];
     for (int i = 0; i < 10; i++){
-      ages[i] = r.nextInt(60);
+      ages[i] = r.nextInt(60); //0-59
     }
     return ages;
   }
@@ -15,12 +15,12 @@ class CanVote{
   }
 
   public static String[][] generateEligibility(int[] ages){
-    String[][] eligible = new String[10][2];
+    String[][] eligible = new String[10][2]; // 2D array to store age and eligibility
 
     for (int i = 0; i < ages.length; i++){
       if (isEligible(ages[i])){
-        eligible[i][0] = String.valueOf(ages[i]);
-        eligible[i][1] = "true";
+        eligible[i][0] = String.valueOf(ages[i]);  // Store age as a string
+        eligible[i][1] = "true"; //store the eligibility
       } else{
         eligible[i][0] = String.valueOf(ages[i]);
         eligible[i][1] = "false";
@@ -40,7 +40,7 @@ class CanVote{
   }
 
   public static void main(String[] args){
-    int[] randomAges = generateRandomAge();
+    int[] randomAges = generateRandomAge(); // Generate random ages
     String[][] eligible = generateEligibility(randomAges);
 
     display(eligible);
